@@ -4,11 +4,11 @@ import dayjs from "dayjs";
 import './App.css'
 
 type taskProps={
-    id:string,
+    id:string,//uuidv4 to string
     name:string
     descript:string,
-    createAt:string,
-    dueAt:string,
+    createAt:string, //dayjs2string
+    dueAt:string,//dayjs2string
     importance: 1 | 2 | 3 | 4 | 5 | 6 | 7 ;
     complete: 0 | 1
 }

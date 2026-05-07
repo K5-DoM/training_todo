@@ -4,7 +4,7 @@
 
 ## 構成
 
-TypeScript + React + vite + Tailwind CSS + localStrage バックエンド使わん。要件機能の完成とビルドまでできたらいいな。配布はギッタブペイジズ（Github Pages）でいいかなぁ。
+TypeScript + React + vite + Tailwind CSS + localStrage。要件機能の完成とビルドまでできたらいいな。配布はギッタブペイジズ（Github Pages）でいいかなぁ。
 
 ## 方針
 
@@ -12,7 +12,7 @@ TypeScript + React + vite + Tailwind CSS + localStrage バックエンド使わ�
 
 ## 参考資料
 https://zenn.dev/tmasuyama1114/books/react_basic_tutorial
-読ませていただきます。コードコピペはしない！誓いましょう。
+読ませていただきます。コードコピペはそんなにしない！　ちょっとはするかも。
 
 以下は構築時のコピペ
 # React + TypeScript + Vite
