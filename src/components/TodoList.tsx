@@ -1,28 +1,26 @@
-import { useState, type JSXElementConstructor } from 'react'
+import type { FunctionComponent } from 'react'
 import { v4 as uuidv4 } from "uuid";
 import dayjs from "dayjs";
-import './App.css'
+import type {Task} from "../types"
+import '../App.css'
 
-type taskProps={
-    id:string,//uuidv4 to string
-    name:string
-    descript:string,
-    createAt:string, //dayjs2string
-    dueAt:string,//dayjs2string
-    importance: 1 | 2 | 3 | 4 | 5 | 6 | 7 ;
-    complete: 0 | 1
+
+function OneTodo({task}:{task:Task}){
+    return <>
+        <div key={task.id} className="bg-white p-4 rounded lg shadow-md">
+            <h2 className="text-xl font-bold">{task.name}</h2>
+            <p className="text-m font-medium">{task.descript ? task.descript : ""}</p>
+            <p className="text-sm text-gray-600">Due to:{task.dueAt ? task.dueAt : "nothing"}</p>
+            <h4 className="text-l text-font-semibold">importance: {task.importance}</h4>
+            <h4 className="text-l text-font-semibold">{(task.complete==0?"未完了":"完了")}</h4>
+        </div>
+    </>
 }
 
-function todoList (tasks:Array<taskProps>){
-    return<>
-        {tasks.map((task:taskProps)=>(
-            <div key={task.id} className="bg-white p-4 rounded lg shadow-md">
-                <h2 className="text-xl font-bold">{task.name}</h2>
-                <p className="text-m font-medium">{task.descript}</p>
-                <p className="text-sm text-gray-600">Due to:{task.dueAt}</p>
-                <h4 className="text-l text-font-semibold">importance: {task.importance}</h4>
-                <h4 className="text-l text-font-semibold">{(task.complete==0?"未完了":"完了")}</h4>
-            </div>
+export default function TodoList({tasks}:{tasks:Task[]}) {
+    return<div>
+        {tasks.map((task:Task)=>(
+            <OneTodo task={task} />
         ))}
-    </>
+    </div>
 }
